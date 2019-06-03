@@ -5,44 +5,90 @@ has_toc: false
 ---
 # Typical Workflow
 
-This chapter describes the standard workflow for using the Altus AUTH SDK API and lists the functions provided.
-Two sample applications are provided, one for C++ and one for .NET.
-The information in this chapter is extracted from DPAltusAuthSdkApi.h.
-For terminology and concepts, see the DigitalPersona Administrator Guides and the DigitalPersona CLient Guide.
-Workflow
-The normal process is:
-call DPAlInit to initialize
-...
-call functions in the API
-if a API function returned an array, string or BLOG, call DPAlFreeBuffer to release the memory
+This chapter describes the standard workflow for using the Altus AUTH SDK API and lists the functions provided.  
 
+Two sample applications are provided, one for C++ and one for .NET.  
+
+The information in this chapter is extracted from DPAltusAuthSdkApi.h.  
+
+For terminology and concepts, see the DigitalPersona Administrator Guides and the DigitalPersona CLient Guide.  
+
+The typical workflow is:  
+
+```  
+Call DPAlInit to initialize
 ...
-call DPAlTerm to release resources
-Note that if you are calling only one function in the API, then you don’t need to call DPAlInit and DPAlTerm directly because the function will initialize and terminate for itself automatically. However when you are making multiple calls, it is faster and more efficient to initialize and terminate directly.
-The API provides:
-Authentication: Verifying that a user is who they claim to be by checking that the provided credentials (password, fingerprint, etc.) match their username's credentials in the DigitalPersona database.
-The DPAlAuthenticate function displays the multi-factor authentication dialog and matches the supplied credentials against the user's enrolled credentials. The customizable dialog box accepts the credentials required by the authentication policy set by the DigitalPersona administrator.
-Optional: On successful authentication, DPAlAuthenticate can return user secrets and the type of credential(s) that the user provided for authentication.
-Identification: Searching in Active Directory to find the user and authenticate them. For Kiosk environments only.
-The DPAlIdentAuthenticate function displays the multi-factor identification dialog and identifies the user based on the credentials supplied. The customizable dialog box allows the user to provide the credentials required by the current authentication policy.
-Optional: If the identification succeeds, DPAlIdentAuthenticate can return the user name, the type of credential(s) used to authenticate and user secrets.
+Call functions in the API
+... If a API function returned an array, string or BLOG, call DPAlFreeBuffer to release the memory.  
+
+...  
+Call DPAlTerm to release resources  
+```  
+Note that if you are calling only one function in the API, then you don’t need to call DPAlInit and DPAlTerm directly because the function will initialize and terminate for itself automatically. However when you are making multiple calls, it is faster and more efficient to initialize and terminate directly.  
+
+The API provides:  
+
+- Authentication: Verifying that a user is who they claim to be by checking that the provided credentials (password, fingerprint, etc.) match their username's credentials in the DigitalPersona database.  
+
+  The DPAlAuthenticate function displays the multi-factor authentication dialog and matches the supplied credentials against the user's enrolled credentials. The customizable dialog box accepts the credentials required by the authentication policy set by the DigitalPersona administrator.  
+
+  Optional: On successful authentication, DPAlAuthenticate can return user secrets and the type of credential(s) that the user provided for authentication.
+- Identification: Searching in Active Directory to find the user and authenticate them. For Kiosk environments only.  
+
+  The DPAlIdentAuthenticate function displays the multi-factor identification dialog and identifies the user based on the credentials supplied. The customizable dialog box allows the user to provide the credentials required by the current authentication policy.  
+
+  Optional: If the identification succeeds, DPAlIdentAuthenticate can return the user name, the type of credential(s) used to authenticate and user secrets.
 Authentication Policies
 The simplest option provided by DigitalPersona AUTH API is to authenticate a user using the session authentication policy defined by the DigitalPersona administrator. In this case, you do not need to know how policies work and you may simply pass NULLs to the API for all parameters that take an authentication policy.
-For more information on authentication policies, see Chapter 14, Custom Authentication Policies, on page 150.
-Functions
+For more information on authentication policies, see the section [Custom Authentication Policies]().  
+
+# Functions
 This section lists the Pro Authentication API functions. For a detailed description of each function’s parameters, consult the header file DPAlAuthSdkApi.h.
 
-Function	Description
-DPAlInit	Initialize the authentication functions.
-Calling this function is optional -- if you do not call it, the system will initialize itself. However if you are going to call multiple authentication functions, it is more efficient and provides better performance if you initialize and terminate explicitly.
-DPAlTerm	Terminate the authentication process, release resources.
-You must call DPAlTerm once for each time that you called DPAlInit.
-DPAlAuthentication	Display multi-factor authentication dialog and authenticate a user. Optionally return the type of credentials used to authenticate and/or a secret upon successful authentication.
-Note that this function performs a 1-to-1 comparison -- matching a user’s credentials against their enrolled credentials in the DigitalPersona database.
-DPAlIdentAuthenticate	For Kiosk environments only. Display multi-factor identification dialog and identify a user. Optionally return the username, the type of credential(s) used to authenticate and/or user secret(s) upon successful identification.
-Note that this function performs a 1-to-many comparison -- searching Active Directory to find the user -- and then authenticates the user.
-DPAlReadAuthPolicy	Read an authentication policy.
-DPAlWriteSecret	Save the requested secret (authenticated users only).
-DPPTDoesSecretExist	Check to see if a secret exists.
-DPAlBufferFree	Release memory buffer allocated by the other functions in the API.
-DPAlFormatMessage	Returns a message string corresponding to an error code generated by the API. The string is returned in the language of the current user.
+
+<table style="width:100%;margin-left:auto;margin-right:auto;">
+  <tr>
+    <th style="width:181px">Function</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td valign="top" >DPAlInit</td>
+    <td>Initialize the authentication functions.
+  Calling this function is optional -- if you do not call it, the system will initialize itself. However if you are going to call multiple authentication functions, it is more efficient and provides better performance if you initialize and terminate explicitly.</td>
+  </tr>
+  <tr>
+    <td  valign="top">DPAlTerm</td>
+    <td>Terminate the authentication process, release resources.
+    You must call DPAlTerm once for each time that you called DPAlInit.
+</td>
+<tr>
+  <td  valign="top">DPAlAuthentication</td>
+  <td>Display multi-factor authentication dialog and authenticate a user. Optionally return the type of credentials used to authenticate and/or a secret upon successful authentication.
+  Note that this function performs a 1-to-1 comparison -- matching a user’s credentials against their enrolled credentials in the DigitalPersona database.
+</td>
+<tr>
+  <td  valign="top">DPAlIdentAuthenticate</td>
+  <td><b>For Kiosk environments only.</b> Display multi-factor identification dialog and identify a user. Optionally return the username, the type of credential(s) used to authenticate and/or user secret(s) upon successful identification.</br></br>
+  Note that this function performs a 1-to-many comparison -- searching Active Directory to find the user -- and then authenticates the user.
+</td>
+<tr>
+  <td  valign="top">DPAlReadAuthPolicy</td>
+  <td>	Read an authentication policy.
+</td>
+<tr>
+  <td  valign="top">DPAlWriteSecret</td>
+  <td>	Save the requested secret (authenticated users only).
+</td>
+<tr>
+  <td  valign="top">DPPTDoesSecretExist</td>
+  <td>Check to see if a secret exists.
+</td>
+<tr>
+  <td  valign="top">DPAlBufferFree</td>
+  <td>Release memory buffer allocated by the other functions in the API.
+</td><tr>
+  <td  valign="top">DPAlFormatMessage</td>
+  <td>Returns a message string corresponding to an error code generated by the API. The string is returned in the language of the current user.
+</td>
+  </tr>
+</table>  
