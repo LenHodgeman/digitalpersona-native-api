@@ -1,3 +1,5 @@
 remote_theme: pmarsceill/just-the-docs
 title: ''
 search_enabled: true
+
+theme: jekyll-theme-cayman
