@@ -6,7 +6,7 @@ nav_order: 3
 
 ![](docs/assets/index-47bdbe20.png)    
 
-# Functions
+## Functions
 
 The DigitalPersona Native API (previously DP AUTH API) is a subset of the DigitalPersona Access Management API that provides native authentication and identification on the Windows Platform. User enrollment must be handled separately through a DigitalPersona client such as the DigitalPersona Workstation or Kiosk, Attended Enrollment or Web Enrollment.
 
@@ -45,10 +45,10 @@ The API can be used for the following:
 The DigitalPersona AUTH API observes all of the settings in the DigitalPersona software regarding its communications with the server, supported credentials, policies, etc.
 
 For advanced users, your application can require additional credentials (i.e., you can create a custom authentication policy), but if secret release is required, your application’s must meet the requirements of the policy set by the DigitalPersona administrator.
-## Target Audience
+### Target Audience
 This API is for developers who have a working knowledge of the C++ programming language. In addition, readers should have an understanding of the DigitalPersona product and its authentication terminology and concepts.
 
-## Related Topics
+### Related Topics
 [Typical Workflow](Native-API-Typical-Workflow)  
 [Native API functions](Native-API-Native-API-functions)
 
