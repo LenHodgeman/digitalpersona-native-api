@@ -16,7 +16,7 @@ This API is automatically installed as part of these DigitalPersona clients.
 * DigitalPersona AD Workstation or LDS Workstation  
 * DigitalPersona AD Kiosk or LDS Kiosk  
 
-Sample applications and code ilustrating vaarious functioons abailable through the API are included for C++ and .NET.  
+Sample applications and code ilustrating vaarious functioons available through the API are included for C++ and .NET.  
 
 For detailed instructions on installing and configuring the DigitalPersona environment, see the [DigitalPersona Administrator and Client Guides](https://www.crossmatch.com/company/support/documentation/).
 
@@ -43,12 +43,17 @@ The API can be used for the following:
 The DigitalPersona AUTH API observes all of the settings in the DigitalPersona software regarding its communications with the server, supported credentials, policies, etc.
 
 For advanced users, your application can require additional credentials (i.e., you can create a custom authentication policy), but if secret release is required, your application’s must meet the requirements of the policy set by the DigitalPersona administrator.
-## Target Audience
+
+## Target Audience  
+
 This API is for developers who have a working knowledge of the C++ programming language. In addition, readers should have an understanding of the DigitalPersona product and its authentication terminology and concepts.
 
-## Related Topics
-[Typical Workflow](Native-API-Typical-Workflow)  
-[Native API functions](Native-API-Native-API-functions)
+## Related Topics  
+
+[Typical Workflow](typical-workflow.md)  
+[Native API functions](functions.md)
+[Sample Application](sample-application)
+[Custom Authentication Policies](custom-auth-policies)
 
 Chapter 12, Windows API, describes the typical workflow for authentication on the desktop and describes the functions in the API.
 Chapter 13, Windows API Sample Application, describes the features of the sample application.

@@ -4,54 +4,53 @@ title: Functions
 nav_order: 3
 ---
 
-![](docs/assets/index-47bdbe20.png)    
-
 ## Functions
 
-The DigitalPersona Native API (previously DP AUTH API) is a subset of the DigitalPersona Access Management API that provides native authentication and identification on the Windows Platform. User enrollment must be handled separately through a DigitalPersona client such as the DigitalPersona Workstation or Kiosk, Attended Enrollment or Web Enrollment.
+This section lists the Pro Authentication API functions. For a detailed description of each function’s parameters, consult the header file DPAlAuthSdkApi.h.
 
-This API is automatically installed as part of these DigitalPersona clients:
-
-* DigitalPersona AD Workstation or LDS Workstation  
-* DigitalPersona AD Kiosk or LDS Kiosk  
-
-Sample code with any necessary includes are available at the following locations:
-
-* C++ Sample Code
-* .NET) Sample Code  
-
-For detailed instructions on installing and configuring the DigitalPersona environment, see the [DigitalPersona Administrator and Client Guides](https://www.crossmatch.com/company/support/documentation/).
-
-When you install a DigitalPersona Workstation or Kiosk client, the DigitalPersona AUTH API runtime is installed as well. As shown in the diagram below, your application must be installed on workstations that are also running one of the DigitalPersona clients.
-
-![](../assets/NATIVE-API-91e58d68.png)
-
-The API can be used for the following:
-
-* Authenticating users with the authentication policy and user interface used by DigitalPersona Workstation/Kiosk and optionally reading a user secret.
-
-  The DPAlAuthenticate function displays the multi-factor authentication dialog and matches the supplied credentials against the user's enrolled credentials. The customizable dialog box accepts the credentials required by the authentication policy set by the DigitalPersona administrator. On successful authentication, DPAlAuthenticate can optionally return user secrets to the application.
-
-* Identifying users by searching in the DigitalPersona database to find the user and authenticate them.
-
-* The DPAlIdentAuthenticate function displays the multi-factor identification dialog and identifies the user based on the credentials supplied.
-
-  The customizable dialog box allows the user to provide the credentials required by the current authentication policy. If the identification succeeds, DPAlIdentAuthenticate can optionally return the user name and secret to the application.
-
-* Retrieving and saving user secrets. Secrets are cryptographically protected and are released to an application only after successful authentication of the user. Secrets are stored in the DigitalPersona database and roam with the rest of the user data.
-
-* Implementing custom authentication policies which extend the DigitalPersona administrator’s policies or create new policies.
-
-The DigitalPersona AUTH API observes all of the settings in the DigitalPersona software regarding its communications with the server, supported credentials, policies, etc.
-
-For advanced users, your application can require additional credentials (i.e., you can create a custom authentication policy), but if secret release is required, your application’s must meet the requirements of the policy set by the DigitalPersona administrator.
-### Target Audience
-This API is for developers who have a working knowledge of the C++ programming language. In addition, readers should have an understanding of the DigitalPersona product and its authentication terminology and concepts.
-
-### Related Topics
-[Typical Workflow](Native-API-Typical-Workflow)  
-[Native API functions](Native-API-Native-API-functions)
-
-Chapter 12, Windows API, describes the typical workflow for authentication on the desktop and describes the functions in the API.
-Chapter 13, Windows API Sample Application, describes the features of the sample application.
-Chapter 14, Custom Authentication Policies, describes how authentication policies are stored, how to extend an authentication policy and how to define a new authentication policy.
+<table style="width:100%;margin-left:auto;margin-right:auto;">
+  <tr>
+    <th style="width:181px">Function</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td valign="top" >DPAlInit</td>
+    <td>Initialize the authentication functions.
+  Calling this function is optional -- if you do not call it, the system will initialize itself. However if you are going to call multiple authentication functions, it is more efficient and provides better performance if you initialize and terminate explicitly.</td>
+  </tr>
+  <tr>
+    <td  valign="top">DPAlTerm</td>
+    <td>Terminate the authentication process, release resources.
+    You must call DPAlTerm once for each time that you called DPAlInit.
+</td>
+<tr>
+  <td  valign="top">DPAlAuthentication</td>
+  <td>Display multi-factor authentication dialog and authenticate a user. Optionally return the type of credentials used to authenticate and/or a secret upon successful authentication.
+  Note that this function performs a 1-to-1 comparison -- matching a user’s credentials against their enrolled credentials in the DigitalPersona database.
+</td>
+<tr>
+  <td  valign="top">DPAlIdentAuthenticate</td>
+  <td><b>For Kiosk environments only.</b> Display multi-factor identification dialog and identify a user. Optionally return the username, the type of credential(s) used to authenticate and/or user secret(s) upon successful identification.</br></br>
+  Note that this function performs a 1-to-many comparison -- searching Active Directory to find the user -- and then authenticates the user.
+</td>
+<tr>
+  <td  valign="top">DPAlReadAuthPolicy</td>
+  <td>	Read an authentication policy.
+</td>
+<tr>
+  <td  valign="top">DPAlWriteSecret</td>
+  <td>	Save the requested secret (authenticated users only).
+</td>
+<tr>
+  <td  valign="top">DPPTDoesSecretExist</td>
+  <td>Check to see if a secret exists.
+</td>
+<tr>
+  <td  valign="top">DPAlBufferFree</td>
+  <td>Release memory buffer allocated by the other functions in the API.
+</td><tr>
+  <td  valign="top">DPAlFormatMessage</td>
+  <td>Returns a message string corresponding to an error code generated by the API. The string is returned in the language of the current user.
+</td>
+  </tr>
+</table>  
