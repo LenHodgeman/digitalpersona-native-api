@@ -50,11 +50,8 @@ This API is for developers who have a working knowledge of the C++ programming l
 
 ## Related Topics  
 
+[Installation](installation.md)
 [Typical Workflow](typical-workflow.md)  
 [Native API functions](functions.md)
 [Sample Application](sample-application)
 [Custom Authentication Policies](custom-auth-policies)
-
-Chapter 12, Windows API, describes the typical workflow for authentication on the desktop and describes the functions in the API.
-Chapter 13, Windows API Sample Application, describes the features of the sample application.
-Chapter 14, Custom Authentication Policies, describes how authentication policies are stored, how to extend an authentication policy and how to define a new authentication policy.

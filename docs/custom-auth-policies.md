@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Custom Authentication Policies
-nav_order: 5
+nav_order: 6
 ---
 ## Custom Authentication Policies
 Describes how authentication policies are stored, how to extend an authentication policy and how to define a new authentication policy.

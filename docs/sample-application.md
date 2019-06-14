@@ -26,6 +26,6 @@ For example, to authenticate a user, click on the *Authenticate the currently lo
 ![](assets/Verify1.jpg)
 
 The actual dialog box will vary depending on your environment and the DigitalPersona client that you have installed.
-You can authenticate with any method that you have set up. After you authenticate, the result of the operation will appear in the main screen of the sample program as shown below, in this case the message Authentication succeeded as shown below.
+You can authenticate with any method that you have set up. After you authenticate, the result of the operation will appear in the main screen of the sample program as shown below, in this case the message Authentication Succeeded as shown below.
 
 ![](assets/Verify2.jpg)
