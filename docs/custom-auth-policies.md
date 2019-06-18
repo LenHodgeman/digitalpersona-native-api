@@ -22,7 +22,7 @@ The DigitalPersona administrator must define the authentication policy or polici
 
 - Users can authenticate with password OR with a smartcard; if they use their smartcard, then they must also enter their PIN.  
 
-Consult the DigitalPersona Administrator Guide (available at https://www.crossmatch.com/company/support/documentation/) for more information on policies.  
+Consult the DigitalPersona Administrator Guide (available at [https://www.crossmatch.com/company/support/documentation/](https://www.crossmatch.com/company/support/documentation/) for more information on policies.  
 
 Note that an authentication policy is defined for a user on a specified workstation. Users may have different policies, and a policy for one user may not work if you try to use it to retrieve a secret for another user.
 ### How an Authentication Policy is Represented  
