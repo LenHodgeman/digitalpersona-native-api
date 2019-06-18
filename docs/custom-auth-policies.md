@@ -5,7 +5,6 @@ nav_order: 6
 ---
 ###### [Native API](..\index.html) / Installation   
 ## Custom Authentication Policies
-Describes how authentication policies are stored, how to extend an authentication policy and how to define a new authentication policy.
 
 This section describes how to define a new or extended authentication policy and how to store it.  
 
