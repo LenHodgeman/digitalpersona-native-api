@@ -35,7 +35,7 @@ Then we create a credential mask for each valid credential or combination.
 Each mask has a bit set for every credential that is required in this combination. As long as the user supplies one valid combination of credentials (i.e., satisfies at least one credential mask) they will be authenticated.
 Each credential mask is a 64-bit value with each bit representing one valid credential. The bits are defined as:
 
-<table style="margin-left:auto;margin-right:auto;">
+<table style="width: 50%; margin-left:auto;margin-right:auto;">
   <tr>
     <th ALIGN="left">Hex Bit Mask</th>
     <th ALIGN="left">Credential</th>
