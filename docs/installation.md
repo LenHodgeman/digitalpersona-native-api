@@ -3,7 +3,7 @@ title: Installation
 nav_order: 2
 has_toc: false
 ---
-###### [Native API](..\index.md) / Installation  
+###### [Native API](..\index.html) / Installation  
 ## Installation  
 
 The DigitalPersona AUTH SDK is automatically installed as part of the following DigitalPersona clients:
