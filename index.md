@@ -3,7 +3,7 @@ layout: default
 title: Overview
 nav_order: 1
 ---
-##### [DigitalPersona Access Management API ](https://lenhodgeman.github.io/digitalpersona-access-management-api/)/ Native API / Overview&nbsp;&nbsp;&nbsp;[\| View Repo \|](https://github.com/LenHodgeman/digitalpersona-native-api)  
+###### [DigitalPersona Access Management API ](https://lenhodgeman.github.io/digitalpersona-access-management-api/)/ Native API / Overview&nbsp;&nbsp;&nbsp;[\| View Repo \|](https://github.com/LenHodgeman/digitalpersona-native-api)  
 
 ![](docs/assets/HID-logo-DNA.png)    
 
@@ -52,6 +52,6 @@ This API is for developers who have a working knowledge of the C++ programming l
 
 [Installation](installation.md)
 [Typical Workflow](typical-workflow.md)  
-[Native API functions](functions.md)
-[Sample Application](sample-application)
+[Native API functions](functions.md)  
+[Sample Application](sample-application)  
 [Custom Authentication Policies](custom-auth-policies)
