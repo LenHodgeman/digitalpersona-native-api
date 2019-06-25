@@ -31,7 +31,7 @@ This section lists the Pro Authentication API functions. For a detailed descript
   <tr>
     <td valign="top">DPAlIdentAuthenticate</td>
     <td><b>For Kiosk environments only.</b> Display multi-factor identification dialog and identify a user. Optionally return the username, the type of credential(s) used to authenticate and/or user secret(s) upon successful identification.<BR><BR>
-    Note that this function performs a 1-to-many comparison -- searching Active Directory to find the user -- and then authenticates the user.</td>
+    Note that this function performs a 1-to-many comparison, searching Active Directory to find the user, and then authenticates the user.</td>
   </tr>
   <tr>
     <td valign="top">DPAlReadAuthPolicy</td>
