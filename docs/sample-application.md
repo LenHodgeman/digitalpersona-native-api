@@ -13,10 +13,11 @@ The sample application displays a set of buttons that demonstrate a variety of t
 The source code header file, DPAltusAuthSdkApi.h, includes detailed comments describing what each button does.
 
 ![](assets/Sample1.jpg)  
-C++ Sample UI  
+<p style="text-align: center;font-style:italic;">C++ Sample UI</p>
 
-![](assets/DOT_NETSampleUI.JPG)  
-.NET Sample UI
+
+![](assets/DOT_NETSampleUI.JPG)
+<p style="text-align: center;font-style:italic;">.NET Sample UI</p>  
 
 Note that to run the sample application you must have a DigitalPersona client installed.
 
