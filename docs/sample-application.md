@@ -15,7 +15,7 @@ The source code header file, DPAltusAuthSdkApi.h, includes detailed comments des
 ![](assets/Sample1.jpg)  
 C++ Sample UI  
 
-![](assets/DOT_NETSampleUI.jpg)  
+![](assets/DOT_NETSampleUI.JPG)  
 .NET Sample UI
 
 Note that to run the sample application you must have a DigitalPersona client installed.
