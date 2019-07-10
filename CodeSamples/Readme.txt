@@ -1,1 +1,0 @@
-The solution Sample Code AltusSDK.sln must be open in Visual Studio 2015 or later. 
